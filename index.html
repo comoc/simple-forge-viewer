@@ -106,14 +106,14 @@
 		spotLight.penumbra = 0.05;
 		spotLight.decay = 2;
 		spotLight.distance = 200;
-//		spotLight.shadow.mapSize.width = 1024;
+		spotLight.shadow.mapSize.width = 1024;
 //		spotLight.shadow.mapSize.height = 1024;
 //		spotLight.shadow.camera.near = 1;
 //		spotLight.shadow.camera.far = 200;
 		var lightHelper = new THREE.SpotLightHelper( spotLight );
 
-		viewer.impl.sceneAfter.add( spotLight );
-		viewer.impl.sceneAfter.add( lightHelper );
+		viewer.impl.scene.add( spotLight );
+		viewer.impl.scene.add( lightHelper );
 	}
 
 	/**
