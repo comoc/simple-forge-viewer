@@ -98,22 +98,24 @@
 		console.log('onLoadModelSuccess()!');
 		console.log('Validate model loaded: ' + (viewer.model === model));
 		console.log(model);
-		var spotLight = new THREE.SpotLight( 0xff0000, 1 );
+		viewer.setLightPreset(10);
 
-		spotLight.position.set( 15, 100, 35 );
-		spotLight.castShadow = true;
-		spotLight.angle = Math.PI / 4;
-		spotLight.penumbra = 0.05;
-		spotLight.decay = 2;
-		spotLight.distance = 200;
-		spotLight.shadowMapWidth = 1024;
-		spotLight.shadowMapHeight = 1024;
-		spotLight.shadowCameraNear = 1;
-		spotLight.shadowCameraFar = 200;
-		var lightHelper = new THREE.SpotLightHelper( spotLight );
-
-		viewer.impl.scene.add( spotLight );
-		viewer.impl.scene.add( lightHelper );
+//		var spotLight = new THREE.SpotLight( 0xff0000, 1 );
+//
+//		spotLight.position.set( 15, 100, 35 );
+//		spotLight.castShadow = true;
+//		spotLight.angle = Math.PI / 4;
+//		spotLight.penumbra = 0.05;
+//		spotLight.decay = 2;
+//		spotLight.distance = 200;
+//		spotLight.shadowMapWidth = 1024;
+//		spotLight.shadowMapHeight = 1024;
+//		spotLight.shadowCameraNear = 1;
+//		spotLight.shadowCameraFar = 200;
+//		var lightHelper = new THREE.SpotLightHelper( spotLight );
+//
+//		viewer.impl.scene.add( spotLight );
+//		viewer.impl.scene.add( lightHelper );
 	}
 
 	/**
