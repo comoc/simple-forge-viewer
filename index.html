@@ -102,21 +102,21 @@
 		addCustomLight();
 	}
 	function addCustomLight() {              
+		// http://adndevblog.typepad.com/cloud_and_mobile/2015/02/add-custom-light-for-the-view-data-api-viewer.html  
+	    Autodesk.Viewing.Private.LightPresets.push({
+	         name: "My Custom Light",
+	         path: null,
+	         tonemap: 0,
+	         E_bias: 0,
+	         directLightColor: [0, 0.84, 0.67],
+	         ambientColor: [0.8, 0.9, 1],
+	         lightMultiplier: 0.1,
+	         bgColorGradient: [230, 230, 230, 150, 150, 150],
+	         darkerFade: !1
+	    });
 	 
-	     Autodesk.Viewing.Private.LightPresets.push({
-	          name: "My Custom Light",
-	          path: null,
-	          tonemap: 0,
-	          E_bias: 0,
-	          directLightColor: [0, 0.84, 0.67],
-	          ambientColor: [0.8, 0.9, 1],
-	          lightMultiplier: 0.1,
-	          bgColorGradient: [230, 230, 230, 150, 150, 150],
-	          darkerFade: !1
-	     });
-	 
-	     //to switch to the new light at once.
-	     viewer.setLightPreset(Autodesk.Viewing.Private.LightPresets.length - 1);
+	    //to switch to the new light at once.
+	    viewer.setLightPreset(Autodesk.Viewing.Private.LightPresets.length - 1);
 	}
 
 	/**
