@@ -112,8 +112,8 @@
 //		spotLight.shadow.camera.far = 200;
 		var lightHelper = new THREE.SpotLightHelper( spotLight );
 
-		viewer.scene.add( spotLight );
-		viewer.scene.add( lightHelper );
+		viewer.impl.scene.add( spotLight );
+		viewer.impl.scene.add( lightHelper );
 	}
 
 	/**
