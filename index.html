@@ -98,6 +98,22 @@
 		console.log('onLoadModelSuccess()!');
 		console.log('Validate model loaded: ' + (viewer.model === model));
 		console.log(model);
+		var spotLight = new THREE.SpotLight( 0xffffff, 1 );
+
+		spotLight.position.set( 15, 40, 35 );
+		spotLight.castShadow = true;
+		spotLight.angle = Math.PI / 4;
+		spotLight.penumbra = 0.05;
+		spotLight.decay = 2;
+		spotLight.distance = 200;
+		spotLight.shadow.mapSize.width = 1024;
+		spotLight.shadow.mapSize.height = 1024;
+		spotLight.shadow.camera.near = 1;
+		spotLight.shadow.camera.far = 200;
+		var lightHelper = new THREE.SpotLightHelper( spotLight );
+
+		viewer.scene.add( spotLight );
+		viewer.scene.add( lightHelper );
 	}
 
 	/**
