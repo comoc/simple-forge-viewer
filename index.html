@@ -98,24 +98,25 @@
 		console.log('onLoadModelSuccess()!');
 		console.log('Validate model loaded: ' + (viewer.model === model));
 		console.log(model);
-		viewer.setLightPreset(5);
 
-//		var spotLight = new THREE.SpotLight( 0xff0000, 1 );
-//
-//		spotLight.position.set( 15, 100, 35 );
-//		spotLight.castShadow = true;
-//		spotLight.angle = Math.PI / 4;
-//		spotLight.penumbra = 0.05;
-//		spotLight.decay = 2;
-//		spotLight.distance = 200;
-//		spotLight.shadowMapWidth = 1024;
-//		spotLight.shadowMapHeight = 1024;
-//		spotLight.shadowCameraNear = 1;
-//		spotLight.shadowCameraFar = 200;
-//		var lightHelper = new THREE.SpotLightHelper( spotLight );
-//
-//		viewer.impl.scene.add( spotLight );
-//		viewer.impl.scene.add( lightHelper );
+		addCustomLight();
+	}
+	function addCustomLight() {              
+	 
+	     Autodesk.Viewing.Private.LightPresets.push({
+	          name: "My Custom Light",
+	          path: null,
+	          tonemap: 0,
+	          E_bias: 0,
+	          directLightColor: [0, 0.84, 0.67],
+	          ambientColor: [0.8, 0.9, 1],
+	          lightMultiplier: 0.1,
+	          bgColorGradient: [230, 230, 230, 150, 150, 150],
+	          darkerFade: !1
+	     });
+	 
+	     //to switch to the new light at once.
+	     viewer.setLightPreset(Autodesk.Viewing.Private.LightPresets.length - 1);
 	}
 
 	/**
